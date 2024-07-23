@@ -1,37 +1,27 @@
-function Location () {
+
+function Location() {
+  const locations = [
+    { name: 'Paris' },
+    { name: 'Cologne' },
+    { name: 'Brussels' },
+    { name: 'Amsterdam', active: true },
+    { name: 'Hamburg' },
+    { name: 'Dusseldorf' }
+  ];
+
   return (
     <section className="locations container">
       <ul className="locations__list tabs__list">
-        <li className="locations__item">
-          <a className="locations__item-link tabs__item" href="#">
-            <span>Paris</span>
-          </a>
-        </li>
-        <li className="locations__item">
-          <a className="locations__item-link tabs__item" href="#">
-            <span>Cologne</span>
-          </a>
-        </li>
-        <li className="locations__item">
-          <a className="locations__item-link tabs__item" href="#">
-            <span>Brussels</span>
-          </a>
-        </li>
-        <li className="locations__item">
-          <a className="locations__item-link tabs__item tabs__item--active">
-            <span>Amsterdam</span>
-          </a>
-        </li>
-        <li className="locations__item">
-          <a className="locations__item-link tabs__item" href="#">
-            <span>Hamburg</span>
-          </a>
-        </li>
-        <li className="locations__item">
-          <a className="locations__item-link tabs__item" href="#">
-            <span>Dusseldorf</span>
-          </a>
-        </li>
+        {locations.map((location) => (
+          <li key={location.name} className="locations__item">
+            <a
+              className={`locations__item-link tabs__item ${location.active ? 'tabs__item--active' : ''}`}
+              href="#"
+            >
+              <span>{location.name}</span>
+            </a>
+          </li>
+        ))}
       </ul>
     </section>
   );

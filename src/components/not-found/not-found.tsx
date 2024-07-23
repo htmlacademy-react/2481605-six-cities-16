@@ -1,26 +1,9 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { AppRoute } from '../const/const';
 import { Helmet } from 'react-helmet-async';
+import { styles } from '../const/const';
 
 function NotFound(): JSX.Element {
-  const styles: { [key: string]: React.CSSProperties } = {
-    container: {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      height: '100vh',
-    },
-    link: {
-      fontSize: '1rem',
-      color: '#007bff',
-      marginTop: '1rem',
-      padding: '0.5rem 1rem',
-      border: '1px solid #007bff',
-      borderRadius: '0.25rem',
-    },
-  };
 
   return (
     <div style={styles.container}>
