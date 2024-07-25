@@ -1,15 +1,17 @@
-import Cards from '../../components/card/card';
+import OffersList from '../../components/card/offers-list.tsx';
 import Logo from '../../components/logo/logo';
 import HeaderNav from '../../components/header-nav/header-nav';
 import Location from '../../components/location/location';
 import PlacesSorting from '../../components/places-sorting/places-sorting';
 import CitiesMap from '../../components/cities-map/cities-map';
+import { OffersCard } from '../../types/offers.ts';
 
 type MainPageProps = {
   offersCount: number;
+  offersCard: OffersCard[];
 }
 
-function MainPage ({offersCount}: MainPageProps): JSX.Element {
+function MainPage({ offersCount, offersCard }: MainPageProps): JSX.Element {
   return (
     <div className="page page--gray page--main">
       <header className="header">
@@ -34,16 +36,10 @@ function MainPage ({offersCount}: MainPageProps): JSX.Element {
               <h2 className="visually-hidden">Places</h2>
               <b className="places__found">{offersCount} places to stay in Amsterdam</b>
               <PlacesSorting/>
-              <div className="cities__places-list places__list tabs__content">
-                <Cards />
-                <Cards />
-                <Cards />
-                <Cards />
-                <Cards />
-              </div>
+              <OffersList offers={offersCard} />
             </section>
             <div className="cities__right-section">
-              <CitiesMap/>
+              <CitiesMap offers={offersCard} />
             </div>
           </div>
         </div>

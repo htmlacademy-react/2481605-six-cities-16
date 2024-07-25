@@ -1,4 +1,3 @@
-
 export enum AppRoute {
   Login = '/login',
   Favorites = '/favorites',
@@ -29,3 +28,5 @@ export const styles: { [key: string]: React.CSSProperties } = {
     borderRadius: '0.25rem',
   },
 };
+
+export const PHOTO_URL = 'https://i.pravatar.cc/300';
